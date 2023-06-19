@@ -32,8 +32,46 @@ fn main() {
         //     multiply(x_float.into(), y)  # Complie error
         // )
     }
+
+    {
+        let array = [10, 20, 30];
+        print!("Iterating over array:");
+        for n in array {
+            print!(" {n}");
+        }
+        println!();
+
+        print!("Iterating over range:");
+        for n in 1..3 {
+            print!(" {n}");
+        }
+        println!();
+    }
+
+    {
+        let matrix = [
+            [101, 102, 103], // <-- the comment makes rustfmt add a newline
+            [201, 202, 203],
+            [301, 302, 303],
+        ];
+
+        println!("matrix:");
+        pretty_print(&matrix);
+
+        let transposed = transpose(matrix);
+        println!("transposed:");
+        pretty_print(&transposed);
+    }
 }
 
 fn multiply(x: i16, y: i16) -> i16 {
     x * y
+}
+
+fn transpose(matrix: [[i32; 3]; 3]) -> [[i32; 3]; 3] {
+    unimplemented!()
+}
+
+fn pretty_print(matrix: &[[i32; 3]; 3]) {
+    unimplemented!()
 }
