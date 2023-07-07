@@ -69,9 +69,33 @@ fn multiply(x: i16, y: i16) -> i16 {
 }
 
 fn transpose(matrix: [[i32; 3]; 3]) -> [[i32; 3]; 3] {
-    unimplemented!()
+    let mut result = [[0; 3]; 3];
+    for n in 0..3 {
+        result[n] = [matrix[0][n], matrix[1][n], matrix[2][n]]
+    }
+    result
 }
 
 fn pretty_print(matrix: &[[i32; 3]; 3]) {
-    unimplemented!()
+    for row in matrix {
+        println!("{row:?}")
+    }
+}
+
+#[test]
+fn test_transpose() {
+    let matrix = [
+        [101, 102, 103], //
+        [201, 202, 203],
+        [301, 302, 303],
+    ];
+    let transposed: [[i32; 3]; 3] = transpose(matrix);
+    assert_eq!(
+        transposed,
+        [
+            [101, 201, 301], //
+            [102, 202, 302],
+            [103, 203, 303],
+        ]
+    );
 }
