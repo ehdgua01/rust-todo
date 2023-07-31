@@ -1,9 +1,16 @@
 fn main() {
     {
         // Structure
+        #[derive(Debug)]
         struct Person {
             name: String,
             age: u8,
+        }
+
+        impl Person {
+            fn new(name: String, age: u8) -> Self {
+                Person { name, age }
+            }
         }
 
         let mut peter = Person {
@@ -20,6 +27,9 @@ fn main() {
             ..peter
         };
         println!("{} is {} years old", jackie.name, jackie.age);
+
+        let david = Person::new(String::from("David"), 27);
+        println!("{david:#?}");
     }
 
     {
