@@ -21,4 +21,26 @@ fn main() {
         };
         println!("{} is {} years old", jackie.name, jackie.age);
     }
+
+    {
+        // Tuple
+        struct Point(i32, i32);
+        let p = Point(17, 23);
+        println!("({}, {})", p.0, p.1);
+
+        // 단일 필드의 래퍼(Wrapper) a.k.a. Newtype
+        // struct PoundsOfForce(f64);
+        // struct Newtons(f64);
+
+        // fn compute_thruster_force() -> PoundsOfForce {
+        //     todo!("Ask a rocket scientist at NASA")
+        // }
+
+        // fn set_thruster_force(force: Newtons) {
+        //     // ...
+        // }
+
+        // let force = compute_thruster_force();
+        // set_thruster_force(force);
+    }
 }
